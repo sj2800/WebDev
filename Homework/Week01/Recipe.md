@@ -17,7 +17,7 @@ With this recipe, you can make a delicious Miso Ramen!
 
 ### Instructions
 
-1. **Cook the ground portk, or bacon**
+1. **Cook the ground pork, or bacon**
 
     Add 1/2 pound of ground pork, or 3 slices of chopped bacon to a large skillet, or wok, over medium high heat on the stove. Cook the pork for 6-8 minutes, or until cooked through. Use a slotted spoon to remove the pork from the skillet and set it aside in a bowl.
 

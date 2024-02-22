@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+/*font-family: 'Bebas Neue', sans-serif;*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background: url(../img/bg.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+body {
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.container {
+    width: 900px;
+    margin: 0 auto;
+    font-size: 0;
+}
+
+.polaroid {
+    width: 260px;
+    margin: 20px;
+    display: inline-block;
+    position: relative;
+}
+
+.polaroid img {
+    width: 100%;
+    height: auto;
+    border: 10px solid #ccc;
+    border-bottom-width: 45px;
+}
+
+.polaroid p {
+    position: absolute;
+    
+}
