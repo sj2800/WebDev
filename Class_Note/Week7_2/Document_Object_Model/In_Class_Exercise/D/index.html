@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dynamic DOM, 2 ways</title>
+    <style type="text/css">
+      #content {
+        color: red;
+      }
+
+      @media screen and (max-width:767px) {
+        #content {
+          color: blue;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="addSingleP()">Add a single P using strings</button>
+    <button onclick="addMultiP(9)">
+      Add multiple Ps the right way using DOM nodes
+    </button>
+  </body>
+</html>
