@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Grade Calculator</title>
+    <script>
+        function calculateFinalGrade() {
+            const categories = ['quiz', 'homework', 'midterm', 'finalExam', 'attendance'];
+            let totalGrade = 0;
+            let totalWeight = 0;
+
+            for (const category of categories) {
+                // parseFloat() function parses a value as a string and returns the first number
+                // https://www.w3schools.com/jsref/jsref_parsefloat.asp
+
+                const grade = parseFloat(document.getElementById(`${category}Grade`).value);
+                const weight = parseFloat(document.getElementById(`${category}Weight`).value);
+                if (!isNaN(grade) && !isNaN(weight)) {
+                    totalGrade += (grade * (weight / 100));
+                    totalWeight += weight;
+                }
+            }
+
+            //toFixed() converts a number to a string / rounds the string to a specific number of decimals
+            
+            if (totalWeight === 100) {
+                const finalNumericGrade = totalGrade.toFixed(2);
+                const finalLetterGrade = convertToLetterGrade(finalNumericGrade);
+                document.getElementById('result').textContent = `Your final grade is: ${finalNumericGrade} (${finalLetterGrade})`;
+            } else {
+                document.getElementById('result').textContent = 'Error: Total weight does not add up to 100%. Please check your inputs.';
+            }
+        }
+
+        function convertToLetterGrade(numericGrade) {
+            numericGrade = parseFloat(numericGrade);
+            if (numericGrade >= 94) return 'A';
+            else if (numericGrade >= 90) return 'A-';
+            else if (numericGrade >= 87) return 'B+';
+            else if (numericGrade >= 83) return 'B';
+            else if (numericGrade >= 80) return 'B-';
+            else if (numericGrade >= 77) return 'C+';
+            else if (numericGrade >= 73) return 'C';
+            else if (numericGrade >= 70) return 'C-';
+            else if (numericGrade >= 67) return 'D+';
+            else if (numericGrade >= 63) return 'D';
+            else if (numericGrade >= 60) return 'D-';
+            else return 'F';
+        }
+    </script>
+  </head>
+  <body>
+    <h2> Grade Calculator </h2>
+    <div> Quiz: <input type="number" id="quizGrade" placeholder="Grade"> Weight: <input type="number" id="quizWeight" placeholder="% Weight"> </div>
+    <div> Homework: <input type="number" id="homeworkGrade" placeholder="Grade"> Weight: <input type="number" id="homeworkWeight" placeholder="% Weight"> </div>
+    <div> Midterm: <input type="number" id="midtermGrade" placeholder="Grade"> Weight: <input type="number" id="midtermWeight" placeholder="% Weight"> </div>
+    <div> Final Exam: <input type="number" id="finalExamGrade" placeholder="Grade"> Weight: <input type="number" id="finalExamWeight" placeholder="% Weight"> </div>
+    <div> Attendance: <input type="number" id="attendanceGrade" placeholder="Grade"> Weight: <input type="number" id="attendanceWeight" placeholder="% Weight"> </div>
+    <button onclick="calculateFinalGrade()"> Calculate Final Grade </button>
+    <div id="result">
+    </div>
+  </body>
+</html>

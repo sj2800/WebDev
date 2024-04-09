@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Shuffle</title>
+    <script>
+      let students = [
+        'Cindy',
+        'Katie',
+        'Albert',
+        'Mike',
+        'Lee',
+        'David',
+        'Robert',
+        'Paul',
+        'Mary',
+        'Ryan',
+        'Tiffany',
+        'Alice',
+        'Drothy',
+    ]
+
+    function listStudents() {
+      //grab our content div 
+      let content = documnet.getElementById('content')
+      //create an ordered list to store our students
+      let ol = document.createElement('OL')
+      // add the OL tag to our content div
+      content.appendChild(ol)
+
+      //loop through our student array
+      for(let i=0; i<students.length; i++) {
+        //create a list item 
+        let li =document.createElement('LI')
+        //grab the name of the student at slot i in our array 
+        let t = students[i]
+        //pass that name into a text node
+        let text = document.createTextMode(t)
+        // add the textnode to the li
+        li.appendChild(text)
+        // add the li to the ol
+        ol.appendChild(li)
+      }
+    }
+
+    //sort the students alphabetically 
+    function sortStudents() {
+      students.sort()
+      console.log(students)
+    }
+
+    function randomNumber(n) {
+      let rn = Math.Round(Math.random() * n)
+      return rn
+    }
+
+    function shuffleStudents() {
+      for (let i = students.length-1; i > 0; i--) {
+        let randomIndex = randomNumber(student.length)
+
+        let itemAtIndex = student[randomIndex]
+
+        students[randomIndex] = students[i]
+
+        students[i] = itemAtIndex
+      }
+
+    }
+    </script>
+  </head>
+  <body>
+    <button onclick="listStudents()">List Students</button>
+    <button onclick="sortStudents()">Sort Students</button>
+    <button onclick="shuffleStudents()">Shuffle Students</button>
+
+    <div id="content"></div>
+  </body>
+</html>
