@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Geolocation</title>
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', () => {
+        getLocation()
+      })
+
+      //function getLocation() {}
+      const getLocation = () => {
+        //check if your browser supports geoloaction 
+        if (navigator.geolocation) {
+          //geolocation exists and so does the function we need to call to find the current position
+          navigator.geolocation.getCurrentPosition(setPosition)
+        } else {
+          //no geolocation, we should display some sort of message to the user
+          alert('Your browser does not support geolocation.')
+        }
+      }
+
+      const setPosition = (position)
+    </script>
+  </head>
+  <body>
+    <div id="location">
+      <p>Currently searching for location...</p>
+    </div>
+  </body>
+</html>
