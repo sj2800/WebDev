@@ -1,0 +1,248 @@
+html, body {
+    height: auto;
+    margin: 0;
+    padding: 0;
+    display: block;
+    background-color: black;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    font: 600 100%/1 "Josefin Sans", sans-serif;
+    background-color: black;
+  }
+
+.home-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    text-align: center;
+}
+
+.heading {
+    font-size: clamp(3rem, 10vw, 12rem); 
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 0.5em;
+    margin: 0;
+  }
+
+  .heading > div {
+    transform-origin: 50% 100%;
+    overflow: hidden;
+  }
+
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.centered-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button {
+    padding: 10px 20px;
+    margin: 15px; 
+    background-color: transparent;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    transition: font-size 0.3s, font-weight 0.3s;
+}
+
+.button:hover {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+
+.description {
+    color: white;
+    font-family: 'Josefin Sans', sans-serif; 
+    font-size: 15px; 
+    line-height: 1.6; 
+    text-align: center; 
+    margin: 0;
+}
+
+.description span {
+    display: block; 
+    margin-bottom: 10px; 
+    color: white; 
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 18px; 
+    line-height: 1.6; 
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; 
+}
+
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; 
+    padding: 20px;
+}
+
+.project-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px; 
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+}
+
+.project-image {
+    width: 100%;
+    height: 180px; 
+}
+
+.project-description {
+    padding: 15px;
+    text-align: center;
+}
+
+.category-title {
+    width: 100%;
+    text-align: center;
+    font-size: 24px; 
+    margin: 40px 0 20px; 
+    font-weight: bold;
+}
+
+.about-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%; 
+    margin: 2rem auto;
+    padding: 20px;
+    background-color: black; 
+    border-radius: 8px;
+}
+
+/* Project image gallery */
+.gallery {
+    display: flex;
+    gap: 1rem; /* space between cards*/
+    padding: 20px;
+    max-width: 100%;
+    overflow: auto; /* auto if the content overflows the bounds */
+}
+
+.card {
+    flex: 1;
+    transition: flex 0.4s ease-in-out;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    width: 200px; 
+    height: 500px;
+    cursor: pointer;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
+}
+
+.category-title {
+    font-size: 24px;
+    color:white;
+    margin: 40px 0;
+    font-weight: bold;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+.card:hover {
+    flex: 2;
+}
+
+.about-photo {
+    width: 200px; 
+    height: 200px; 
+    object-fit: cover;
+    margin-right: 20px; 
+    border-radius: 50%; 
+}
+
+.about-description {
+    text-align: center;
+}
+
+
+/*INSTAGRAM ICON */
+.instagram-icon {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    z-index: 1000;
+}
+
+.instagram-icon a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* LINKEDIN ICON*/
+.social-icons {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.social-icons a {
+    color: #fff; 
+    text-decoration: none;
+    font-size: 24px;
+}
+
+@media (max-width: 768px) {
+    .project-box {
+        width: 100%; 
+        margin: 5px 0;
+    }
+
+    .gallery {
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+        width: 100%; 
+    }
+
+
+    .card {
+        width: 90%; 
+        margin: 10px 0; 
+        height: 300px; 
+    }
+
+    .card img {
+        height: auto; 
+        object-fit: cover;
+    }
+
+    .category-title {
+        font-size: 20px; 
+    }
+}

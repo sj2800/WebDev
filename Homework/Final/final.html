@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600&amp;display=swap'>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="home-center">
+        <h1 class="heading" aria-label="nebula">
+            Edward Jeong
+        </h1>
+        <div class="button-container">
+            <a href="pages/about.html" class="button">About</a>
+            <a href="pages/projects.html" class="button">Projects</a>
+        </div>
+    </div>
+
+    <!-- GSAP Script -->
+    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+    <!-- SplitText Plugin -->
+    <script src="https://assets.codepen.io/16327/SplitText3.min.js"></script>
+    <script>
+        const heading = document.querySelector(".heading");
+        const headingSplitText = new SplitText(heading, { type: "chars" });
+        const headingChars = headingSplitText.chars;
+
+        gsap.from(headingChars, {
+            filter: "blur(0.15em)",
+            stagger: {
+                from: "left", /* animation for each character*/
+                each: 0.1 /* with 0.1 sec*/
+            },
+            duration: i => 1.25 + i * 0.75, /* duration of the animation starts at 1.25 sec*/
+            ease: "power2.inOut" /* easing function that makes the animation more natural and smoothly*/
+        });
+
+        gsap.from(headingChars, {
+            xPercent: i => (i + 1) * 20, /* moves each characters from a starting position that is furcher to the right*/
+            opacity: 0,
+            stagger: {
+                from: "left",
+                each: 0.1
+            },
+            duration: i => 1 + i * 0.85,
+            ease: "power2.out"
+        }, "<");
+    </script>
+</body>
+</html>
